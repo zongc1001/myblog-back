@@ -1,5 +1,5 @@
 let mongoose = require("mongoose");
-let testDB = "mongodb://localhost:27017/test";
+let testDB = "mongodb://localhost:27017/blog";
 
 mongoose.connect(
     testDB,
