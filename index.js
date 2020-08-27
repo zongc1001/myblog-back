@@ -10,26 +10,6 @@ const static = require("koa-static");
 
 app.use(logger());
 
-// app.use(async (ctx, next) => {
-//   ctx.set("Access-Control-Allow-Origin", "*");
-//   ctx.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PATCH, HEAD, PUT, DELETE");
-//   ctx.set("Access-Control-Max-Age", "3600");
-//   ctx.set("Access-Control-Allow-Headers", "x-requested-with,Authorization,Content-Type,Accept");
-//   ctx.set("Access-Control-Allow-Credentials", "true");
-//   if (ctx.request.method == "OPTIONS") {
-//     ctx.response.status = 200;
-//   } else {
-//     try {
-//       await next();
-//     } catch (err) {
-//       console.log("handler处理错误" + err.message);
-//       ctx.response.status = err.statusCode || err.status || 500;
-//       ctx.response.body = {
-//         message: err.message
-//       };
-//     }
-//   }
-// });
 
 app.use(bodyparser());
 app.use(static(__dirname + "/public"));

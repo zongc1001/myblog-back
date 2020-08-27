@@ -5,6 +5,7 @@ const { secret } = require("../secret");
 
 let login = async function (ctx, next) {
     let { username, password } = ctx.request.body;
+    console.log(ctx.request.body);
 	let result = await Users.findOne({ username, password });
 	
     if (result) {
@@ -49,6 +50,7 @@ let signup = async function (ctx, next) {
         password,
         nickname,
     });
+    console.log(user);
     await user.save();
     ctx.body = {
         msg: "success",
@@ -61,3 +63,4 @@ router.post("/login", login);
 router.post("/signup", signup);
 
 module.exports = router;
+
