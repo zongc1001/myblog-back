@@ -47,10 +47,10 @@ let signup = async function (ctx, next) {
     }
     var user = new Users({
         username,
-        password,
         nickname,
+        password,
     });
-    console.log(user);
+    console.log("user to be created: ", user);
     await user.save();
     ctx.body = {
         msg: "success",
