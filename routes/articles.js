@@ -64,6 +64,7 @@ let getArticleById = async function(ctx, next) {
 };
 
 let putArticleById = async function(ctx, next) {
+    
     let id = ctx.params.id;
     let body = {};
     if(ctx.request.body.title !== undefined) {
@@ -81,7 +82,6 @@ let putArticleById = async function(ctx, next) {
             $set: body,
         }
     );
-    
     if(result) {
         ctx.body = {
             status: 1,
